@@ -1,0 +1,6 @@
+{
+  "name": "Oklahoma Cavaliers Baseball",
+  "description": "Official website for the Oklahoma Cavaliers Post-Graduate Baseball Program based at St. Gregory's Campus in Shawnee, OK.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
