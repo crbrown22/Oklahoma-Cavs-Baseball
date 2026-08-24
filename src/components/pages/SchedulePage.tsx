@@ -55,7 +55,7 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({ setActiveTab, onOpen
       {/* Page Header */}
       <div className="text-center space-y-4 max-w-4xl mx-auto border-b border-[#222222] pb-10">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#141414] border border-[#ca8a04]/40 text-xs font-bold uppercase tracking-widest text-[#facc15]">
-          <Calendar className="w-3.5 h-3.5 text-[#eab308]" /> 2025–2026 Collegiate Slate
+          <Calendar className="w-3.5 h-3.5 text-[#eab308]" /> 2026–2027 Collegiate Slate
         </div>
         <h1 className="font-athletic text-4xl sm:text-6xl font-black text-white uppercase tracking-tight">
           GAME SCHEDULE & RESULTS
@@ -109,7 +109,7 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({ setActiveTab, onOpen
                   : 'text-zinc-400 hover:text-white'
               }`}
             >
-              Spring 2026 Championship Slate (30–40 Games)
+              Spring 2027 Championship Slate (30–40 Games)
             </button>
             <button
               onClick={() => setActiveSeason('Fall')}
@@ -119,7 +119,7 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({ setActiveTab, onOpen
                   : 'text-zinc-400 hover:text-white'
               }`}
             >
-              Fall 2025 Development & Scrimmages
+              Fall 2026 Development & Scrimmages
             </button>
           </div>
 

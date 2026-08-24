@@ -107,55 +107,6 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* Program Highlights Bar */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] shadow-xl flex items-start gap-4">
-            <div className="p-3 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 text-[#facc15]">
-              <Trophy className="w-6 h-6" />
-            </div>
-            <div>
-              <div className="font-athletic text-2xl font-black text-white">30–40 GAMES</div>
-              <p className="text-xs font-semibold text-[#eab308] uppercase tracking-wider">Collegiate Competition</p>
-              <p className="text-xs text-zinc-400 mt-1">Spring schedule vs regional NJCAA, NAIA, and NCAA JV squads.</p>
-            </div>
-          </div>
-
-          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] shadow-xl flex items-start gap-4">
-            <div className="p-3 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 text-[#facc15]">
-              <Home className="w-6 h-6" />
-            </div>
-            <div>
-              <div className="font-athletic text-2xl font-black text-white">CAMPUS HOUSING</div>
-              <p className="text-xs font-semibold text-[#eab308] uppercase tracking-wider">Meals Included</p>
-              <p className="text-xs text-zinc-400 mt-1">Live and eat as a collegiate student-athlete at St. Gregory's.</p>
-            </div>
-          </div>
-
-          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] shadow-xl flex items-start gap-4">
-            <div className="p-3 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 text-[#facc15]">
-              <GraduationCap className="w-6 h-6" />
-            </div>
-            <div>
-              <div className="font-athletic text-2xl font-black text-white">7-STEP PLACEMENT</div>
-              <p className="text-xs font-semibold text-[#eab308] uppercase tracking-wider">College Placement</p>
-              <p className="text-xs text-zinc-400 mt-1">Pro video, coach outreach, and transfer compliance support.</p>
-            </div>
-          </div>
-
-          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] shadow-xl flex items-start gap-4">
-            <div className="p-3 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 text-[#facc15]">
-              <Dumbbell className="w-6 h-6" />
-            </div>
-            <div>
-              <div className="font-athletic text-2xl font-black text-white">$10,000 ALL-IN</div>
-              <p className="text-xs font-semibold text-[#eab308] uppercase tracking-wider">Complete Experience</p>
-              <p className="text-xs text-zinc-400 mt-1">Housing, meals, travel, uniforms, clinics, and recruiting.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* The 3 Pillars Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center space-y-3">
@@ -340,6 +291,55 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Program Highlights Bar */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] shadow-xl flex items-start gap-4">
+            <div className="p-3 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 text-[#facc15]">
+              <Trophy className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="font-athletic text-2xl font-black text-white">30–40 GAMES</div>
+              <p className="text-xs font-semibold text-[#eab308] uppercase tracking-wider">Collegiate Competition</p>
+              <p className="text-xs text-zinc-400 mt-1">Spring schedule vs regional NJCAA, NAIA, and NCAA JV squads.</p>
+            </div>
+          </div>
+
+          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] shadow-xl flex items-start gap-4">
+            <div className="p-3 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 text-[#facc15]">
+              <Home className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="font-athletic text-2xl font-black text-white">CAMPUS HOUSING</div>
+              <p className="text-xs font-semibold text-[#eab308] uppercase tracking-wider">Meals Included</p>
+              <p className="text-xs text-zinc-400 mt-1">Live and eat as a collegiate student-athlete at St. Gregory's.</p>
+            </div>
+          </div>
+
+          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] shadow-xl flex items-start gap-4">
+            <div className="p-3 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 text-[#facc15]">
+              <GraduationCap className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="font-athletic text-2xl font-black text-white">7-STEP PLACEMENT</div>
+              <p className="text-xs font-semibold text-[#eab308] uppercase tracking-wider">College Placement</p>
+              <p className="text-xs text-zinc-400 mt-1">Pro video, coach outreach, and transfer compliance support.</p>
+            </div>
+          </div>
+
+          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] shadow-xl flex items-start gap-4">
+            <div className="p-3 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 text-[#facc15]">
+              <Dumbbell className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="font-athletic text-2xl font-black text-white">$10,000 ALL-IN</div>
+              <p className="text-xs font-semibold text-[#eab308] uppercase tracking-wider">Complete Experience</p>
+              <p className="text-xs text-zinc-400 mt-1">Housing, meals, travel, uniforms, clinics, and recruiting.</p>
+            </div>
+          </div>
         </div>
       </section>
 

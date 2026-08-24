@@ -97,7 +97,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onDeadLinkClick('Game Schedule')}
                   className="flex items-center gap-2 text-zinc-400 opacity-60 hover:text-amber-300 transition cursor-not-allowed text-left"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-zinc-500" /> 2025-2026 Game Schedule
+                  <ChevronRight className="w-3.5 h-3.5 text-zinc-500" /> 2026-2027 Game Schedule
                   <span className="text-[9px] uppercase font-bold px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Updating</span>
                 </button>
               </li>

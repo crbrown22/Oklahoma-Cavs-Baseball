@@ -93,8 +93,7 @@ export const CAVALIER_PILLARS: DevelopmentPillar[] = [
       'HD verified highlight & scouting reels',
       'Verified performance metrics & TrackMan data',
       'Collegiate scout days & 30-40 spring games',
-      'Scholarship & offer negotiation advisory',
-      'Preservation of 4-year NCAA eligibility clocks'
+      'Scholarship & offer negotiation advisory'
     ],
     imageUrl: '/pillar_placement.jpg',
     badge: 'Next Level',
@@ -431,7 +430,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Oklahoma City',
     state: 'OK',
     highSchool: 'Westmoore HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.6,
     metrics: { fastballVelo: '88-91 mph', exitVelocity: '94 mph', sixtyYardDash: '6.85s' },
@@ -450,7 +449,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Tulsa',
     state: 'OK',
     highSchool: 'Union HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.4,
     metrics: { popTime: '1.92s', exitVelocity: '96 mph', sixtyYardDash: '7.15s' },
@@ -469,7 +468,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Edmond',
     state: 'OK',
     highSchool: 'Edmond North HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.8,
     metrics: { sixtyYardDash: '6.65s', exitVelocity: '91 mph' },
@@ -488,7 +487,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Norman',
     state: 'OK',
     highSchool: 'Norman North HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.5,
     metrics: { fastballVelo: '86-89 mph' },
@@ -507,7 +506,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Shawnee',
     state: 'OK',
     highSchool: 'Shawnee HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.7,
     metrics: { sixtyYardDash: '6.60s', exitVelocity: '95 mph', fastballVelo: '87 mph' },
@@ -526,7 +525,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Broken Arrow',
     state: 'OK',
     highSchool: 'Broken Arrow HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.2,
     metrics: { exitVelocity: '98 mph', sixtyYardDash: '7.10s' },
@@ -545,7 +544,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Moore',
     state: 'OK',
     highSchool: 'Moore HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.5,
     metrics: { fastballVelo: '90-93 mph' },
@@ -564,7 +563,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Yukon',
     state: 'OK',
     highSchool: 'Yukon HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.9,
     metrics: { sixtyYardDash: '6.55s', exitVelocity: '89 mph' },
@@ -583,7 +582,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Dallas',
     state: 'TX',
     highSchool: 'Hebron HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.3,
     metrics: { sixtyYardDash: '6.75s', exitVelocity: '92 mph' },
@@ -602,7 +601,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Stillwater',
     state: 'OK',
     highSchool: 'Stillwater HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.6,
     metrics: { popTime: '1.95s', exitVelocity: '93 mph' },
@@ -621,7 +620,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Enid',
     state: 'OK',
     highSchool: 'Enid HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.4,
     metrics: { fastballVelo: '87-90 mph' },
@@ -640,7 +639,7 @@ export const ROSTER_DATA: Player[] = [
     hometown: 'Lawton',
     state: 'OK',
     highSchool: 'MacArthur HS',
-    gradYear: 2025,
+    gradYear: 2026,
     commitmentStatus: 'Uncommitted (Active Prospect)',
     gpa: 3.5,
     metrics: { sixtyYardDash: '6.70s', exitVelocity: '94 mph' },
@@ -652,7 +651,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   // Fall Development & Scrimmages
   {
     id: 'fall-1',
-    date: 'Oct 12, 2025',
+    date: 'Oct 12, 2026',
     time: '1:00 PM',
     opponent: 'Seminole State College JV',
     opponentLocation: 'Seminole, OK',
@@ -667,7 +666,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'fall-2',
-    date: 'Oct 19, 2025',
+    date: 'Oct 19, 2026',
     time: '12:00 PM',
     opponent: 'Oklahoma Baptist University JV',
     opponentLocation: 'Shawnee, OK',
@@ -682,7 +681,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'fall-3',
-    date: 'Oct 26, 2025',
+    date: 'Oct 26, 2026',
     time: '1:00 PM',
     opponent: 'Mid-America Christian Univ. JV',
     opponentLocation: 'Oklahoma City, OK',
@@ -697,7 +696,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'fall-4',
-    date: 'Nov 02, 2025',
+    date: 'Nov 02, 2026',
     time: '1:00 PM',
     opponent: 'Northern Oklahoma College Enid',
     opponentLocation: 'Enid, OK',
@@ -712,7 +711,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'fall-5',
-    date: 'Nov 09, 2025',
+    date: 'Nov 09, 2026',
     time: '12:00 PM',
     opponent: 'USAO JV (Univ. Science & Arts OK)',
     opponentLocation: 'Chickasha, OK',
@@ -726,10 +725,10 @@ export const SCHEDULE_DATA: GameSchedule[] = [
     notes: 'Fall finale prior to winter strength cycle.'
   },
 
-  // Spring 2026 Collegiate Slate (30-40 Games)
+  // Spring 2027 Collegiate Slate (30-40 Games)
   {
     id: 'sp-1',
-    date: 'Feb 14, 2026',
+    date: 'Feb 14, 2027',
     time: '12:00 PM / 2:30 PM',
     opponent: 'Redlands Community College',
     opponentLocation: 'El Reno, OK',
@@ -739,11 +738,11 @@ export const SCHEDULE_DATA: GameSchedule[] = [
     location: 'El Reno, OK',
     field: 'Redlands Field',
     status: 'Upcoming',
-    notes: 'Opening weekend of the 2026 Spring campaign.'
+    notes: 'Opening weekend of the 2027 Spring campaign.'
   },
   {
     id: 'sp-2',
-    date: 'Feb 21, 2026',
+    date: 'Feb 21, 2027',
     time: '1:00 PM / 3:30 PM',
     opponent: 'Murray State College JV',
     opponentLocation: 'Tishomingo, OK',
@@ -757,7 +756,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'sp-3',
-    date: 'Feb 28, 2026',
+    date: 'Feb 28, 2027',
     time: '12:00 PM / 2:30 PM',
     opponent: 'Rose State College JV',
     opponentLocation: 'Midwest City, OK',
@@ -771,7 +770,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'sp-4',
-    date: 'Mar 07, 2026',
+    date: 'Mar 07, 2027',
     time: '1:00 PM / 3:30 PM',
     opponent: 'Cowley County CC JV',
     opponentLocation: 'Arkansas City, KS',
@@ -785,7 +784,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'sp-5',
-    date: 'Mar 14, 2026',
+    date: 'Mar 14, 2027',
     time: '12:00 PM',
     opponent: 'Oklahoma City University JV',
     opponentLocation: 'Oklahoma City, OK',
@@ -799,7 +798,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'sp-6',
-    date: 'Mar 21, 2026',
+    date: 'Mar 21, 2027',
     time: '1:00 PM / 3:30 PM',
     opponent: 'Northeastern Oklahoma A&M JV',
     opponentLocation: 'Miami, OK',
@@ -813,7 +812,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'sp-7',
-    date: 'Mar 28, 2026',
+    date: 'Mar 28, 2027',
     time: '12:00 PM / 2:30 PM',
     opponent: 'Western Oklahoma State JV',
     opponentLocation: 'Altus, OK',
@@ -827,7 +826,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'sp-8',
-    date: 'Apr 04, 2026',
+    date: 'Apr 04, 2027',
     time: '1:00 PM / 3:30 PM',
     opponent: 'Southern Nazarene University JV',
     opponentLocation: 'Bethany, OK',
@@ -841,7 +840,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'sp-9',
-    date: 'Apr 11, 2026',
+    date: 'Apr 11, 2027',
     time: '1:00 PM',
     opponent: 'Southwestern Christian Univ. JV',
     opponentLocation: 'Bethany, OK',
@@ -855,7 +854,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'sp-10',
-    date: 'Apr 18, 2026',
+    date: 'Apr 18, 2027',
     time: '1:00 PM / 3:30 PM',
     opponent: 'East Central University JV',
     opponentLocation: 'Ada, OK',
@@ -869,7 +868,7 @@ export const SCHEDULE_DATA: GameSchedule[] = [
   },
   {
     id: 'sp-11',
-    date: 'Apr 25, 2026',
+    date: 'Apr 25, 2027',
     time: '12:00 PM',
     opponent: 'Post-Grad Championship Tournament',
     opponentLocation: 'Oklahoma City, OK',

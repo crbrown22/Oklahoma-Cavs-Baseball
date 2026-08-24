@@ -42,7 +42,7 @@ OKLAHOMA CAVALIERS BASEBALL — PROSPECT PROFILE
 • Phone: ${data.phone || 'Not provided'}
 • Hometown: ${data.cityState || 'Not provided'}
 • High School: ${data.highSchool || 'Not provided'}
-• Graduation Class: ${data.gradYear || '2025'}
+• Graduation Class: ${data.gradYear || '2026'}
 
 --- PARENT / GUARDIAN CONTACT ---
 ${parentContact}

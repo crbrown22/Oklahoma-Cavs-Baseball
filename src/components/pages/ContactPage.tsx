@@ -277,18 +277,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenHandbookModal })
             </div>
           </div>
 
-          {/* NCAA Eligibility & Clock Notice */}
-          <div className="bg-[#101010] rounded-3xl border border-[#262626] p-6 space-y-3">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#facc15]">
-              <ShieldCheck className="w-4 h-4" /> Eligibility Protection
-            </div>
-            <h5 className="font-athletic text-lg font-bold text-white uppercase">
-              Save All 4 Years of Collegiate Eligibility
-            </h5>
-            <p className="text-xs text-zinc-400 leading-relaxed">
-              Post-graduate baseball does not trigger your NCAA, NAIA, or NJCAA 5-year eligibility clock when attending as a non-degree collegiate preparatory athlete.
-            </p>
-          </div>
+
 
         </div>
       </div>

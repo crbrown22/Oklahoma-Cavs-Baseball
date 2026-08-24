@@ -55,7 +55,7 @@ export const RosterPage: React.FC<RosterPageProps> = ({ setActiveTab, onOpenRecr
           <Users className="w-3.5 h-3.5 text-[#eab308]" /> Oklahoma Cavaliers Post-Grad
         </div>
         <h1 className="font-athletic text-4xl sm:text-6xl font-black text-white uppercase tracking-tight">
-          2025–2026 ACTIVE ROSTER
+          2026–2027 ACTIVE ROSTER
         </h1>
         <p className="text-sm sm:text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed">
           Meet the student-athletes developing daily at St. Gregory's campus and preparing for collegiate baseball opportunities.
@@ -303,7 +303,7 @@ export const RosterPage: React.FC<RosterPageProps> = ({ setActiveTab, onOpenRecr
             WANT TO WEAR THE CAVALIER UNIFORM?
           </h3>
           <p className="text-xs sm:text-sm text-zinc-300">
-            We are actively scouting 2024, 2025, and transfer athletes for our upcoming post-graduate campaign.
+            We are actively scouting 2025, 2026, and transfer athletes for our upcoming post-graduate campaign.
           </p>
         </div>
         <button

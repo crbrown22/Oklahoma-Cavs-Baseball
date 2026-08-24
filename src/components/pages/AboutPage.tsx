@@ -150,7 +150,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             </span>
             <h3 className="font-athletic text-2xl font-bold text-white uppercase">Why Post-Grad?</h3>
             <p className="text-xs text-zinc-300 leading-relaxed">
-              A post-graduate year bridges the gap between high school and college athletics, providing additional time to develop physically, academically, and mentally while competing against collegiate competition—all without burning your college eligibility clock.
+              A post-graduate year bridges the gap between high school and college athletics, providing additional time to develop physically, academically, and mentally while competing against collegiate competition.
             </p>
           </div>
         </div>
@@ -257,12 +257,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               </p>
             </div>
 
-            <div className="bg-[#0a0a0a] p-6 rounded-2xl border border-[#262626] space-y-2">
-              <h4 className="font-athletic text-lg font-bold text-white uppercase">Eligibility Protection</h4>
-              <p className="text-xs text-zinc-300 leading-relaxed">
-                Post-graduate competition does not trigger your NCAA, NAIA, or NJCAA 5-year collegiate eligibility clock, saving all 4 full years of college play.
-              </p>
-            </div>
+
           </div>
         </div>
       </section>
