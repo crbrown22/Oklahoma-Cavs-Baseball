@@ -34,7 +34,8 @@ import {
   WEEKDAY_SCHEDULE, 
   DEPOSIT_PLANS, 
   REMAINING_BALANCE_PLANS,
-  RECRUITING_STEPS 
+  RECRUITING_STEPS,
+  CAVALIER_PILLARS
 } from '../data/mockData';
 import { CavaliersLogo } from './CavaliersLogo';
 
@@ -322,17 +323,35 @@ export const HandbookModal: React.FC<HandbookModalProps> = ({ isOpen, onClose, o
               </div>
 
               {/* Benedictine Values Grid */}
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <h5 className="font-athletic text-xl font-bold text-white uppercase flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-[#facc15]" /> Benedictine Values
+                  <Shield className="w-5 h-5 text-[#facc15]" /> Benedictine Values & Traditions
                 </h5>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {BENEDICTINE_VALUES.map((val, i) => (
-                    <div key={i} className="p-4 bg-[#121212] rounded-xl border border-[#262626] space-y-1">
-                      <span className="font-athletic text-base font-bold text-[#facc15] uppercase block">
-                        {val.name}
-                      </span>
-                      <p className="text-xs text-zinc-300 leading-relaxed">{val.desc}</p>
+                    <div key={i} className="bg-[#121212] rounded-xl border border-[#262626] overflow-hidden flex flex-col justify-between group hover:border-[#ca8a04]/50 transition-colors shadow-lg">
+                      <div className="relative h-28 w-full bg-black">
+                        <img
+                          src={val.imageUrl}
+                          alt={val.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent" />
+                        <div className="absolute top-2 right-2">
+                          <span className="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-[#1c1917]/90 text-[#facc15] border border-[#ca8a04]/40">
+                            {val.badge}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
+                        <div>
+                          <span className="font-athletic text-sm font-bold text-white uppercase text-[#facc15] block">
+                            {val.name}
+                          </span>
+                          <p className="text-xs text-zinc-300 leading-relaxed mt-1">{val.desc}</p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -342,65 +361,57 @@ export const HandbookModal: React.FC<HandbookModalProps> = ({ isOpen, onClose, o
             {/* 5. Development Model */}
             <div id="sec-model" className="scroll-mt-6 space-y-6">
               <div className="flex items-center gap-2 text-[#facc15] font-athletic text-2xl font-bold border-b border-[#262626] pb-2">
-                <span>THE CAVALIER DEVELOPMENT MODEL</span>
+                <span>THE 5 PILLARS OF CAVALIER DEVELOPMENT</span>
               </div>
               <p className="text-sm text-zinc-300">
-                We believe complete player development extends beyond baseball. Our program is built on five key pillars:
+                We believe complete player development extends beyond baseball. Every aspect of the Oklahoma Cavaliers curriculum is built on five core pillars:
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-                <div className="bg-[#121212] p-4 rounded-xl border border-[#262626] space-y-2">
-                  <h6 className="font-athletic text-base font-bold text-white uppercase text-[#facc15]">1. Baseball</h6>
-                  <ul className="text-xs text-zinc-300 space-y-1">
-                    <li>• Pitching</li>
-                    <li>• Hitting</li>
-                    <li>• Defense</li>
-                    <li>• Catching</li>
-                    <li>• Baserunning</li>
-                    <li>• Mental Performance</li>
-                  </ul>
-                </div>
-
-                <div className="bg-[#121212] p-4 rounded-xl border border-[#262626] space-y-2">
-                  <h6 className="font-athletic text-base font-bold text-white uppercase text-[#facc15]">2. Athletic</h6>
-                  <ul className="text-xs text-zinc-300 space-y-1">
-                    <li>• Strength Training</li>
-                    <li>• Speed Development</li>
-                    <li>• Mobility</li>
-                    <li>• Recovery</li>
-                    <li>• Nutrition</li>
-                  </ul>
-                </div>
-
-                <div className="bg-[#121212] p-4 rounded-xl border border-[#262626] space-y-2">
-                  <h6 className="font-athletic text-base font-bold text-white uppercase text-[#facc15]">3. Academic</h6>
-                  <ul className="text-xs text-zinc-300 space-y-1">
-                    <li>• Study Hall</li>
-                    <li>• Time Management</li>
-                    <li>• College Readiness</li>
-                    <li>• Transfer Assistance</li>
-                  </ul>
-                </div>
-
-                <div className="bg-[#121212] p-4 rounded-xl border border-[#262626] space-y-2">
-                  <h6 className="font-athletic text-base font-bold text-white uppercase text-[#facc15]">4. Leadership</h6>
-                  <ul className="text-xs text-zinc-300 space-y-1">
-                    <li>• Accountability</li>
-                    <li>• Communication</li>
-                    <li>• Professionalism</li>
-                    <li>• Teamwork</li>
-                  </ul>
-                </div>
-
-                <div className="bg-[#121212] p-4 rounded-xl border border-[#262626] space-y-2 sm:col-span-2 lg:col-span-1">
-                  <h6 className="font-athletic text-base font-bold text-white uppercase text-[#facc15]">5. Placement</h6>
-                  <ul className="text-xs text-zinc-300 space-y-1">
-                    <li>• Recruiting Strategy</li>
-                    <li>• Highlight Videos</li>
-                    <li>• Coach Networking</li>
-                    <li>• Scholarship Guidance</li>
-                  </ul>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+                {CAVALIER_PILLARS.map((pillar) => (
+                  <div 
+                    key={pillar.id}
+                    className="bg-[#121212] rounded-xl border border-[#262626] overflow-hidden flex flex-col hover:border-[#ca8a04]/50 transition-colors shadow-lg"
+                  >
+                    <div className="relative h-28 w-full bg-black">
+                      <img 
+                        src={pillar.imageUrl} 
+                        alt={pillar.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent" />
+                      <div className="absolute top-2 left-2">
+                        <span className="text-[10px] font-black font-athletic px-2 py-0.5 rounded bg-black/80 text-white border border-white/20">
+                          {pillar.number}
+                        </span>
+                      </div>
+                      <div className="absolute top-2 right-2">
+                        <span className="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-[#1c1917]/90 text-[#facc15] border border-[#ca8a04]/40">
+                          {pillar.badge}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-3.5 space-y-2 flex-1 flex flex-col justify-between">
+                      <div>
+                        <h6 className="font-athletic text-sm font-bold text-white uppercase text-[#facc15]">
+                          {pillar.shortTitle}
+                        </h6>
+                        <p className="text-[10px] text-zinc-400 font-semibold mb-2 line-clamp-1">
+                          {pillar.tagline}
+                        </p>
+                        <ul className="text-[11px] text-zinc-300 space-y-1">
+                          {pillar.focusAreas.slice(0, 4).map((area, idx) => (
+                            <li key={idx} className="flex items-start gap-1">
+                              <span className="text-[#facc15] font-bold">•</span>
+                              <span className="line-clamp-1">{area}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -454,9 +465,22 @@ export const HandbookModal: React.FC<HandbookModalProps> = ({ isOpen, onClose, o
                 <span>KROME SPORTS PERFORMANCE — ELITE STRENGTH & PERFORMANCE</span>
               </div>
 
-              <div className="bg-[#121212] p-6 sm:p-8 rounded-2xl border border-[#262626] space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1a1a1a] text-xs font-bold text-[#facc15] border border-[#ca8a04]/40 uppercase">
-                  <Flame className="w-3.5 h-3.5" /> Bigger. Faster. Stronger. More Explosive.
+              <div className="bg-[#121212] p-6 sm:p-8 rounded-2xl border border-[#262626] space-y-6">
+                <div className="flex flex-col sm:flex-row items-center gap-6 pb-2 border-b border-[#262626]">
+                  <div className="bg-white p-3.5 rounded-xl shadow-lg border border-zinc-200 flex-shrink-0 max-w-[220px] w-full flex items-center justify-center">
+                    <img
+                      src="/krome_logo.jpg"
+                      alt="KROME Sports Performance Logo"
+                      className="w-full h-auto object-contain max-h-20"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="space-y-2 text-center sm:text-left">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1a1a1a] text-xs font-bold text-[#facc15] border border-[#ca8a04]/40 uppercase">
+                      <Flame className="w-3.5 h-3.5" /> Bigger. Faster. Stronger. More Explosive.
+                    </div>
+                    <p className="text-xs text-[#facc15] font-semibold">Official Performance Training Partner of Oklahoma Cavaliers Baseball</p>
+                  </div>
                 </div>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
                   The Oklahoma Cavaliers have the opportunity to work with one of the best baseball sports performance companies in the region, <strong>KROME Sports Performance (KSP)</strong>. KSP has worked with thousands of athletes from youth up to the professional ranks, including helping the <strong>2025-2026 Seminole State Trojans Baseball to a NJCAA World Series appearance</strong> this spring.
@@ -654,22 +678,28 @@ export const HandbookModal: React.FC<HandbookModalProps> = ({ isOpen, onClose, o
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                 <div className="bg-[#121212] p-5 rounded-xl border border-[#262626] space-y-2">
+                  <h5 className="font-bold text-[#facc15] uppercase">KROME Sports Performance Weight Room</h5>
+                  <p className="text-zinc-300">Total-body explosive power, rotational strength, sprint mechanics, and individualized arm-care protocols designed specifically for baseball athletes.</p>
+                </div>
+
+                <div className="bg-[#121212] p-5 rounded-xl border border-[#262626] space-y-2">
                   <h5 className="font-bold text-[#facc15] uppercase">Baseball Field</h5>
                   <p className="text-zinc-300">Compete where you train. Dedicated collegiate field for team practices, defensive work, live BP, bullpens, scrimmages, and collegiate competition.</p>
                 </div>
 
                 <div className="bg-[#121212] p-5 rounded-xl border border-[#262626] space-y-2">
-                  <h5 className="font-bold text-[#facc15] uppercase">Indoor Development Facility</h5>
-                  <p className="text-zinc-300">Development doesn't stop because of weather. Year-round hitting & pitching development, drills, and small-group training through fall and winter.</p>
+                  <div className="flex items-center justify-between">
+                    <h5 className="font-bold text-[#facc15] uppercase">Indoor Development Facility</h5>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#dc2626] text-white">Coming Soon</span>
+                  </div>
+                  <p className="text-zinc-300">Climate-controlled indoor training environment and batting cages with turf lanes, tee work, machine velocity, exit velocity tracking, and pitch design labs.</p>
                 </div>
 
                 <div className="bg-[#121212] p-5 rounded-xl border border-[#262626] space-y-2">
-                  <h5 className="font-bold text-[#facc15] uppercase">Batting Cages</h5>
-                  <p className="text-zinc-300">More reps. Better results. Tee work, front toss, live pitching, exit velo tracking, and pitcher bullpen sequencing labs.</p>
-                </div>
-
-                <div className="bg-[#121212] p-5 rounded-xl border border-[#262626] space-y-2">
-                  <h5 className="font-bold text-[#facc15] uppercase">Locker Room (Coming Soon)</h5>
+                  <div className="flex items-center justify-between">
+                    <h5 className="font-bold text-[#facc15] uppercase">Locker Room</h5>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#dc2626] text-white">Coming Soon</span>
+                  </div>
                   <p className="text-zinc-300">Your home away from home. Where teammates prepare together, communicate, build culture, and uphold the Cavalier Standard: Leave it better than you found it.</p>
                 </div>
               </div>
@@ -695,17 +725,40 @@ export const HandbookModal: React.FC<HandbookModalProps> = ({ isOpen, onClose, o
                 </p>
               </div>
 
-              <div className="space-y-2.5">
+              <div className="space-y-3">
                 {RECRUITING_STEPS.map((s) => (
-                  <div key={s.step} className="p-4 bg-[#121212] rounded-xl border border-[#262626] flex items-start gap-3">
-                    <span className="w-8 h-8 rounded-lg bg-[#1a1a1a] text-[#facc15] border border-[#ca8a04]/40 flex items-center justify-center font-athletic text-base font-bold shrink-0">
-                      0{s.step}
-                    </span>
-                    <div className="space-y-0.5 text-xs">
-                      <span className="font-athletic text-sm font-bold text-white uppercase block">
-                        Step {s.step} — {s.title}
+                  <div key={s.step} className="p-4 bg-[#121212] rounded-xl border border-[#262626] hover:border-[#ca8a04]/50 transition space-y-2.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#800020] to-[#400010] text-[#facc15] border border-[#facc15]/60 flex items-center justify-center font-athletic text-sm font-black shrink-0">
+                          0{s.step}
+                        </span>
+                        <div>
+                          <span className="text-[10px] font-black uppercase text-[#facc15] bg-[#800020]/30 px-2 py-0.5 rounded border border-[#800020]/50 block w-max">
+                            {s.phase}
+                          </span>
+                          <span className="font-athletic text-base font-bold text-white uppercase block mt-0.5">
+                            Step {s.step} — {s.title}
+                          </span>
+                        </div>
+                      </div>
+                      <span className="text-[11px] font-semibold text-zinc-400 shrink-0 hidden sm:inline-block">
+                        {s.timeframe}
                       </span>
-                      <p className="text-zinc-300 leading-relaxed">{s.description}</p>
+                    </div>
+
+                    <p className="text-xs text-zinc-300 leading-relaxed pl-10">
+                      {s.description}
+                    </p>
+
+                    {/* Deliverables pill tags */}
+                    <div className="pl-10 pt-1 flex flex-wrap gap-1.5">
+                      {s.deliverables.map((deliv, di) => (
+                        <span key={di} className="text-[10px] font-medium text-zinc-300 bg-[#1a1a1a] border border-[#2a2a2a] px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#facc15]"></span>
+                          {deliv}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 ))}

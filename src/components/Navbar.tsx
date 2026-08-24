@@ -9,6 +9,7 @@ interface NavbarProps {
   setActiveTab: (tab: PageTab) => void;
   onOpenRecruitModal: () => void;
   onOpenHandbookModal: () => void;
+  onDeadLinkClick: (sectionName: string) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -16,20 +17,26 @@ export const Navbar: React.FC<NavbarProps> = ({
   setActiveTab,
   onOpenRecruitModal,
   onOpenHandbookModal,
+  onDeadLinkClick,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems: { tab: PageTab; label: string; icon: React.ReactNode }[] = [
+  const navItems: { tab: PageTab; label: string; icon: React.ReactNode; isDead?: boolean }[] = [
     { tab: 'home', label: 'Home', icon: <Home className="w-4 h-4" /> },
     { tab: 'about', label: 'About & Facilities', icon: <Info className="w-4 h-4" /> },
-    { tab: 'roster', label: 'Roster', icon: <Users className="w-4 h-4" /> },
-    { tab: 'coaches', label: 'Coaching Staff', icon: <ShieldAlert className="w-4 h-4" /> },
-    { tab: 'schedule', label: 'Schedule', icon: <Calendar className="w-4 h-4" /> },
+    { tab: 'roster', label: 'Roster', icon: <Users className="w-4 h-4" />, isDead: true },
+    { tab: 'coaches', label: 'Coaching Staff', icon: <ShieldAlert className="w-4 h-4" />, isDead: true },
+    { tab: 'schedule', label: 'Schedule', icon: <Calendar className="w-4 h-4" />, isDead: true },
     { tab: 'gallery', label: 'Gallery', icon: <Image className="w-4 h-4" /> },
     { tab: 'contact', label: 'Contact & Recruit', icon: <Phone className="w-4 h-4" /> },
   ];
 
-  const handleNavClick = (tab: PageTab) => {
+  const handleNavClick = (tab: PageTab, isDead?: boolean, label?: string) => {
+    if (isDead) {
+      onDeadLinkClick(label || 'This section');
+      setMobileMenuOpen(false);
+      return;
+    }
     setActiveTab(tab);
     setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -73,26 +80,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </button>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-            {navItems.map((item) => {
-              const isActive = activeTab === item.tab;
-              return (
-                <button
-                  key={item.tab}
-                  onClick={() => handleNavClick(item.tab)}
-                  className={`px-3.5 py-2 rounded-lg text-sm font-semibold tracking-wide transition-all flex items-center gap-1.5 ${
-                    isActive
-                      ? 'bg-[#1a1a1a] text-[#facc15] shadow-sm border border-[#ca8a04]/40 font-bold'
-                      : 'text-zinc-300 hover:text-white hover:bg-[#141414]'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              );
-            })}
-          </nav>
-
           {/* Action CTAs */}
           <div className="hidden sm:flex items-center gap-2.5">
             <button
@@ -113,8 +100,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* Menu Button (All Screen Sizes) */}
+          <div className="flex items-center gap-2">
             <button
               onClick={onOpenRecruitModal}
               className="px-3 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider text-zinc-950 bg-[#eab308] sm:hidden"
@@ -123,21 +110,39 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-zinc-300 hover:text-white hover:bg-[#181818] border border-[#262626]"
+              className="p-2.5 rounded-lg text-zinc-300 hover:text-white hover:bg-[#181818] border border-[#262626] flex items-center gap-2"
               aria-label="Toggle menu"
             >
+              <span className="text-xs font-bold uppercase tracking-wider hidden sm:inline px-1 text-zinc-300">Menu</span>
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Dropdown Navigation */}
+      {/* Dropdown Navigation Menu (All Screen Sizes) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[#222222] bg-[#0d0d0d] px-4 pt-3 pb-6 space-y-2 shadow-2xl animate-in slide-in-from-top duration-200">
-          <div className="grid grid-cols-1 gap-1">
+        <div className="border-t border-[#222222] bg-[#0d0d0d] px-4 pt-3 pb-6 space-y-2 shadow-2xl animate-in slide-in-from-top duration-200">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 gap-1">
             {navItems.map((item) => {
               const isActive = activeTab === item.tab;
+              if (item.isDead) {
+                return (
+                  <button
+                    key={item.tab}
+                    onClick={() => handleNavClick(item.tab, true, item.label)}
+                    className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-base font-semibold text-left transition opacity-60 text-zinc-400 hover:bg-[#141414] cursor-not-allowed"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-zinc-500">{item.icon}</span>
+                      {item.label}
+                    </div>
+                    <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                      Updating Soon
+                    </span>
+                  </button>
+                );
+              }
               return (
                 <button
                   key={item.tab}

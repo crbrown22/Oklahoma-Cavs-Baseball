@@ -1,4 +1,107 @@
-import { Player, Coach, Facility, GameSchedule, FAQItem, GalleryPhoto } from '../types';
+import { Player, Coach, Facility, GameSchedule, FAQItem, GalleryPhoto, DevelopmentPillar, BenedictineValue, RecruitingStep } from '../types';
+
+export const CAVALIER_PILLARS: DevelopmentPillar[] = [
+  {
+    id: 'baseball',
+    number: '01',
+    title: 'Baseball Skills & IQ',
+    shortTitle: 'Baseball',
+    tagline: 'Position Mastery & High-Level Game Execution',
+    description: 'Comprehensive daily on-field instruction focusing on technical mechanics, velocity, bat speed, defensive versatility, and situational game instincts under competitive collegiate conditions.',
+    focusAreas: [
+      'Pitching mechanics, pitch design & command',
+      'Advanced hitting approaches & pitch recognition',
+      'Defensive range, footwork & throwing angles',
+      'Catching, blocking & staff game calling',
+      'Aggressive baserunning & anticipation',
+      'In-game pressure management & routine'
+    ],
+    imageUrl: '/pillar_baseball.jpg',
+    badge: 'Technical Mastery',
+    accentColor: '#dc2626',
+    iconName: 'Flame'
+  },
+  {
+    id: 'athletic',
+    number: '02',
+    title: 'Athletic Performance',
+    shortTitle: 'Athletic',
+    tagline: 'Powered by KROME Sports Performance',
+    description: 'Progressive strength, velocity, and power training designed specifically for baseball athletes. Builds explosive rotational power, sprint speed, durability, and year-round arm health.',
+    focusAreas: [
+      'Total-body functional strength & power',
+      'Speed development & 60-yard dash mechanics',
+      'Rotational power & hip-shoulder separation',
+      'Arm-care protocols & post-throw recovery',
+      'Joint mobility & injury mitigation',
+      'Fueling, hydration & recovery habits'
+    ],
+    imageUrl: '/pillar_athletic.jpg',
+    badge: 'KSP Performance',
+    accentColor: '#ca8a04',
+    iconName: 'Zap'
+  },
+  {
+    id: 'academic',
+    number: '03',
+    title: 'Academic Excellence',
+    shortTitle: 'Academic',
+    tagline: 'GPA Elevation & College Readiness',
+    description: 'Structured study environment and accredited college coursework options ensuring athletes maintain academic momentum, raise college GPAs, and satisfy NCAA/NAIA eligibility standards.',
+    focusAreas: [
+      'Mandatory structured study halls & tutoring',
+      'Accredited college credit enrollment options',
+      'Time management & collegiate study habits',
+      'NCAA / NAIA / NJCAA eligibility tracking',
+      'Transcript audits & academic advisory',
+      'Seamless 4-year transfer credit planning'
+    ],
+    imageUrl: '/pillar_academic.jpg',
+    badge: 'College Ready',
+    accentColor: '#2563eb',
+    iconName: 'GraduationCap'
+  },
+  {
+    id: 'leadership',
+    number: '04',
+    title: 'Leadership & Character',
+    shortTitle: 'Leadership',
+    tagline: 'Accountability, Integrity & Brotherhood',
+    description: 'Instilling the discipline, personal maturity, and emotional composure required of elite athletes. We foster clubhouse brotherhood, campus respect, and professional accountability.',
+    focusAreas: [
+      'Personal responsibility & accountability',
+      'Clear, respectful communication skills',
+      'Team-first clubhouse culture & brotherhood',
+      'Campus policy adherence & community service',
+      'Emotional composure in high-leverage moments',
+      'Professional self-presentation & standards'
+    ],
+    imageUrl: '/pillar_leadership.jpg',
+    badge: 'Character First',
+    accentColor: '#059669',
+    iconName: 'ShieldCheck'
+  },
+  {
+    id: 'placement',
+    number: '05',
+    title: 'College Placement',
+    shortTitle: 'Placement',
+    tagline: 'Proactive Recruiting & College Advancement',
+    description: 'Direct advocacy to four-year and two-year collegiate programs across the nation. We produce professional scouting video reels, track verified metrics, and guide the entire recruiting process.',
+    focusAreas: [
+      'Proactive outreach to college coaching networks',
+      'HD verified highlight & scouting reels',
+      'Verified performance metrics & TrackMan data',
+      'Collegiate scout days & 30-40 spring games',
+      'Scholarship & offer negotiation advisory',
+      'Preservation of 4-year NCAA eligibility clocks'
+    ],
+    imageUrl: '/pillar_placement.jpg',
+    badge: 'Next Level',
+    accentColor: '#9333ea',
+    iconName: 'Target'
+  }
+];
 
 export const PROGRAM_INFO = {
   name: 'Oklahoma Cavaliers',
@@ -24,9 +127,9 @@ export const PROGRAM_INFO = {
 export const FACILITIES_DATA: Facility[] = [
   {
     id: 'weight-room',
-    title: 'Weight Room',
+    title: 'KROME Sports Performance Weight Room Training',
     subtitle: 'Build the Athlete',
-    description: 'The Cavaliers strength and conditioning program is designed to prepare athletes for the physical demands of collegiate baseball. Training is progressive and designed around the individual needs of baseball players.',
+    description: 'The Cavaliers strength and conditioning program is powered by KROME Sports Performance, designed to prepare athletes for the physical demands of collegiate baseball. Training is progressive and customized around the individual needs of baseball players.',
     highlights: [
       'Total-body strength & explosive power',
       'Speed and acceleration development',
@@ -35,7 +138,7 @@ export const FACILITIES_DATA: Facility[] = [
       'Arm-care development & recovery protocols',
       'Progressive individualized load management'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/weight_room_training.jpg',
     iconName: 'Dumbbell'
   },
   {
@@ -48,43 +151,28 @@ export const FACILITIES_DATA: Facility[] = [
       'Team tactical & defensive practices',
       'Position-specific instruction daily',
       'Live batting practice & situational baseball',
-      'Live bullpens & intrasquad scrimmages',
-      'Home turf for 30–40 spring collegiate games'
+      'Live bullpens & intrasquad scrimmages'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1508344928928-7165b67de128?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/collegiate_baseball_field.jpg',
     iconName: 'Trophy'
   },
   {
     id: 'indoor-facility',
-    title: 'Indoor Development Facility',
-    subtitle: "Development Doesn't Stop Because of Weather",
-    description: 'Our climate-controlled indoor training environment allows players to continue developing throughout the year regardless of weather conditions, especially during critical fall and winter months.',
+    title: 'Indoor Development Facility (Coming Soon)',
+    subtitle: "Year-Round Player Development & Batting Cages",
+    description: 'Our upcoming climate-controlled indoor training environment and batting cage facility will allow Cavaliers athletes to continue developing uninterrupted year-round regardless of weather conditions. Features full indoor turf throwing and fielding lanes, batting cages, and pitch development labs.',
     highlights: [
-      'Full indoor turf throwing & fielding lanes',
-      'Comprehensive hitting & pitching development labs',
-      'Individual & small-group instruction bays',
-      'Movement training & baseball-specific conditioning',
-      'Year-round uninterrupted player progression',
-      'High-speed video capture stations'
+      'Climate-controlled indoor turf throwing & fielding lanes',
+      'Full batting cages with tee work, front toss, & machine velocity',
+      'Swing mechanics, exit velocity tracking, & launch angle analysis',
+      'Pitch design, command, bullpen sequencing, & arm-care labs',
+      'Individual & small-group offensive & defensive instruction',
+      'Year-round uninterrupted athletic & skill progression'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=1200&q=80',
-    iconName: 'Warehouse'
-  },
-  {
-    id: 'batting-cages',
-    title: 'Batting Cages',
-    subtitle: 'More Reps. Better Results.',
-    description: 'The batting cage environment provides athletes with unlimited reps and advanced instruction to master offensive and pitching mechanics outside of traditional team practice.',
-    highlights: [
-      'Swing mechanics & bat speed training',
-      'Plate discipline & pitch recognition',
-      'Exit velocity tracking & launch angle focus',
-      'Situational hitting & two-strike approaches',
-      'Pitch design, command, & sequencing for pitchers',
-      'Tee work, front toss, & high-velocity machines'
-    ],
-    imageUrl: 'https://images.unsplash.com/photo-1544698310-74ea9d1c8258?auto=format&fit=crop&w=1200&q=80',
-    iconName: 'Target'
+    imageUrl: '/indoor_batting_cage.jpg',
+    iconName: 'Warehouse',
+    isComingSoon: true,
+    badge: 'Coming Soon'
   },
   {
     id: 'locker-room',
@@ -99,7 +187,7 @@ export const FACILITIES_DATA: Facility[] = [
       'Respect the facility, teammates, & opportunity',
       'Safe, organized athletic clubhouse environment'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1584466977773-e625c37cdd50?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/locker_room.jpg',
     iconName: 'Shield'
   },
   {
@@ -115,46 +203,137 @@ export const FACILITIES_DATA: Facility[] = [
       'Lifelong brotherhood & shared culture',
       'Supervised, safe historical campus setting'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/rockenhanced.jpeg',
     iconName: 'Home'
+  },
+  {
+    id: 'campus-grounds',
+    title: "Historic St. Gregory's Campus Grounds",
+    subtitle: 'Historic 75-Acre Campus',
+    description: "The historic St. Gregory's campus in Shawnee, OK provides a dedicated collegiate living and training environment with iconic architecture, quiet study settings, and athletic grounds.",
+    highlights: [
+      'Historic Benedictine campus setting in Shawnee, OK',
+      'Quiet, focused athletic and academic environment',
+      'Integrated campus housing, dining, and training grounds',
+      'Full collegiate atmosphere for post-grad student-athletes'
+    ],
+    imageUrl: '/rockenhanced.jpeg',
+    iconName: 'Building2'
   }
 ];
 
-export const RECRUITING_STEPS = [
+export const RECRUITING_STEPS: RecruitingStep[] = [
   {
     step: '1',
-    title: 'Player Evaluation',
-    description: "Our coaching staff comprehensively evaluates each athlete's position, athletic ability, baseball skills, strengths, areas for improvement, academic situation, and recruiting aspirations."
+    phase: 'Phase 01: Baseline Diagnostic',
+    title: 'Comprehensive Player Evaluation',
+    subtitle: 'Biomechanical & Metric Baseline',
+    description: "Our coaching staff comprehensively evaluates each athlete's position skills, athletic movement, pitch metrics, exit velocities, defensive pop times, academic standing, and collegiate recruiting aspirations.",
+    deliverables: [
+      'TrackMan Pitch Velocity & Spin Diagnostics',
+      'Position-Specific Defensive Mechanics Audit',
+      'Academic Transcript & NCAA Eligibility Review',
+      '60-Yard Dash & Athletic Profile Benchmark'
+    ],
+    iconName: 'ClipboardCheck',
+    cavaliersAdvantage: 'Immediate pro-level evaluation baseline within 48 hours of arriving on the St. Gregory campus.',
+    timeframe: 'Weeks 1–2 (Arrival & Orientation)'
   },
   {
     step: '2',
-    title: 'Development Plan',
-    description: 'Players receive individualized mechanical, physical, and tactical goals designed specifically to elevate their overall recruiting profile and collegiate readiness.'
+    phase: 'Phase 02: Customized Development',
+    title: 'Individualized Cavalier Blueprint',
+    subtitle: 'Tailored Mechanical & Physical Goals',
+    description: 'Players receive individualized mechanical, physical, and tactical development goals designed specifically to elevate their overall recruiting profile and prepare them for college roster competition.',
+    deliverables: [
+      'Custom Pitch Design & Arm-Care Recovery Plan',
+      'Rapsodo Hitting Launch Angle & Exit Velo Matrix',
+      'Periodized Weight Room Programming (St. Gregory Gym)',
+      'Nutritional & Athletic Progression Roadmap'
+    ],
+    iconName: 'Target',
+    cavaliersAdvantage: 'Targeted growth metrics tailored directly to what NCAA & NAIA coaches actively search for.',
+    timeframe: 'Continuous Fall Development'
   },
   {
     step: '3',
-    title: 'Professional Player Video',
-    description: 'We help players produce polished recruiting materials including verified highlight reels, position-specific defensive videos, live game footage, bullpen/pitch design reels, and athletic metrics.'
+    phase: 'Phase 03: Pro Media & Verified Data',
+    title: 'Verified Video & Metric Reel',
+    subtitle: 'High-Definition Scout Footage',
+    description: 'We help players produce polished recruiting materials including verified highlight reels, position-specific defensive videos, live intra-squad game footage, pitch design reels, and verified athletic metrics.',
+    deliverables: [
+      'High-Def Position & Bullpen Video Production',
+      'Verified Exit Velo & Pop Time Timestamp Badges',
+      'Synergy Sports Digital Athlete Profile',
+      'Cavaliers Official Verified Scout Card'
+    ],
+    iconName: 'Video',
+    cavaliersAdvantage: 'Professional HD video production distributed directly through official Oklahoma Cavaliers recruiting channels.',
+    timeframe: 'Mid-Fall Scout Day'
   },
   {
     step: '4',
-    title: 'College Identification',
-    description: 'We actively assist players and families in identifying NCAA (D1, D2, D3), NAIA, and NJCAA collegiate programs that match their academic, athletic, financial, and geographic preferences.'
+    phase: 'Phase 04: Targeted Match Audit',
+    title: 'Collegiate Program Identification',
+    subtitle: 'Tailored College Matching',
+    description: 'We actively assist players and families in identifying NCAA (D1, D2, D3), NAIA, and NJCAA collegiate programs that match their academic standing, athletic ceiling, financial situation, and geographic preferences.',
+    deliverables: [
+      'Target List of 20+ Compatible College Programs',
+      'Roster Needs & Transfer Portal Roster Analysis',
+      'Academic & Scholarship Financial Match Audit',
+      'Regional & National Opportunity Mapping'
+    ],
+    iconName: 'Compass',
+    cavaliersAdvantage: 'Direct access to GM Christopher Brown’s extensive national college coaching network.',
+    timeframe: 'Late Fall & Winter'
   },
   {
     step: '5',
-    title: 'Coach Communication',
-    description: 'Players are mentored in communicating professionally with college coaches—mastering introductory emails, phone calls, questionnaires, video submissions, and structured follow-ups.'
+    phase: 'Phase 05: Coach-to-Coach Advocacy',
+    title: 'Direct College Coach Outreach',
+    subtitle: 'Professional Mentorship & Advocacy',
+    description: 'Players are mentored in communicating professionally with college coaches—mastering introductory emails, phone calls, questionnaires, video submissions, and structured follow-ups, backed by direct staff endorsements.',
+    deliverables: [
+      'Direct Phone Advocacy by GM Christopher Brown',
+      'Professional Recruiting Email & Text Scripting',
+      'Phone Interview & College Visit Prep Workshops',
+      'Structured Follow-Up Communication Calendar'
+    ],
+    iconName: 'Send',
+    cavaliersAdvantage: 'Direct phone calls and texts from Cavalier coaches directly to head coaches and recruiting coordinators.',
+    timeframe: 'Ongoing (Winter / Spring)'
   },
   {
     step: '6',
-    title: 'Visits & Evaluation',
-    description: 'When appropriate, our staff coordinates and supports campus visits, tryouts, college showcases, specialized recruiting events, and college practice viewings.'
+    phase: 'Phase 06: In-Person Evaluation',
+    title: 'Visits, Showcases & Scout Games',
+    subtitle: 'Campus Trials & Live Competitions',
+    description: 'When appropriate, our staff coordinates and supports campus visits, workouts, college showcases, specialized recruiting events, and live spring games viewed directly by visiting college scouts.',
+    deliverables: [
+      'Campus Visit & Tryout Scheduling Support',
+      'Spring Scout Game Exposure (JUCO/JV Opponents)',
+      'Collegiate Workout & Bullpen Coordination',
+      'Scout & Coach Meeting Debriefs'
+    ],
+    iconName: 'CalendarCheck',
+    cavaliersAdvantage: 'Cavaliers schedule includes games against top regional JUCO and 4-year JV programs for maximum in-person evaluation.',
+    timeframe: 'Spring Schedule (Mar–May)'
   },
   {
     step: '7',
-    title: 'Placement',
-    description: 'Our ultimate objective is placing the athlete into the right next collegiate opportunity where they will thrive academically, athletically, and personally.'
+    phase: 'Phase 07: Roster Spot Earned',
+    title: 'Collegiate Placement & Commitment',
+    subtitle: 'Future Signed & Secured',
+    description: 'Our ultimate objective is placing the athlete into the right next collegiate opportunity where they will thrive academically, athletically, and personally, earning a 4-year or 2-year college commitment.',
+    deliverables: [
+      'Offer & Scholarship Package Evaluation',
+      'NCAA/NAIA Transfer Portal & Eligibility Clearance',
+      'Official Cavaliers Signing Day Ceremony & Graphic',
+      'College Admissions & Summer Class Registration Guidance'
+    ],
+    iconName: 'Award',
+    cavaliersAdvantage: 'Unwavering 100% commitment to finding every Cavalier athlete their next college baseball home.',
+    timeframe: 'Spring / Early Summer Signing'
   }
 ];
 
@@ -817,55 +996,47 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     category: 'campus',
     categoryLabel: 'Campus & Facilities',
     description: "The historic St. Gregory's campus in Shawnee, OK provides a full collegiate living and training environment.",
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: '/rockenhanced.jpeg'
   },
   {
     id: 'gal-2',
-    title: 'Collegiate Baseball Field',
+    title: 'Collegiate Baseball Field & Player Action',
     category: 'facilities',
     categoryLabel: 'Campus & Facilities',
-    description: 'Home of the Cavaliers for daily practices, defensive drills, bullpens, and 30-40 spring collegiate games.',
-    imageUrl: 'https://images.unsplash.com/photo-1508344928928-7165b67de128?auto=format&fit=crop&w=1200&q=80'
+    description: 'Home of the Cavaliers for daily practices, defensive drills, bullpens, and collegiate game competition.',
+    imageUrl: '/gal_field.jpg'
   },
   {
     id: 'gal-3',
-    title: 'High-Performance Weight Room',
+    title: 'KROME Sports Performance Weight Room Training',
     category: 'training',
     categoryLabel: 'Strength & Conditioning',
     description: 'Structured, progressive athletic development focused on explosive power, rotational strength, and arm-care.',
-    imageUrl: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: '/gal_weight.jpg'
   },
   {
     id: 'gal-4',
-    title: 'Indoor Hitting & Pitching Facility',
+    title: 'Indoor Development Facility (Coming Soon)',
     category: 'facilities',
     categoryLabel: 'Training & Development',
-    description: 'Climate-controlled turf bays and cages ensuring year-round progression through Oklahoma winters.',
-    imageUrl: 'https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=1200&q=80'
-  },
-  {
-    id: 'gal-5',
-    title: 'Live Batting Practice & Cage Sessions',
-    category: 'training',
-    categoryLabel: 'Hitting Development',
-    description: 'Daily offensive instruction targeting swing mechanics, exit velocities, and situational approach.',
-    imageUrl: 'https://images.unsplash.com/photo-1544698310-74ea9d1c8258?auto=format&fit=crop&w=1200&q=80'
+    description: 'Upcoming climate-controlled turf training bays, batting cages, and pitching development facility.',
+    imageUrl: '/gal_indoor.jpg'
   },
   {
     id: 'gal-6',
     title: 'Gameday Competition & Doubleheaders',
     category: 'games',
     categoryLabel: 'Collegiate Competition',
-    description: 'Competing against regional NJCAA, NAIA, and NCAA JV programs in live game environments.',
-    imageUrl: 'https://images.unsplash.com/photo-1562077772-3ab121866df0?auto=format&fit=crop&w=1200&q=80'
+    description: 'Competing against regional NJCAA, NAIA, and NCAA JV programs in live game environments with full doubleheader action.',
+    imageUrl: '/ok_cavs_gameday.jpg'
   },
   {
     id: 'gal-7',
-    title: 'Pitching Lab & Bullpen Sessions',
+    title: 'Defensive Lab and Arm Care',
     category: 'training',
-    categoryLabel: 'Pitching & Arm-Care',
-    description: 'Biomechanical reviews, pitch design, and strict recovery protocols led by pitching coordinators.',
-    imageUrl: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=80'
+    categoryLabel: 'Defensive & Arm-Care',
+    description: 'Infield/outfield mechanics, agility, throwing programs, and strict recovery protocols led by player development staff.',
+    imageUrl: '/ok_cavs_pitching_lab.jpg'
   },
   {
     id: 'gal-8',
@@ -873,15 +1044,15 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     category: 'facilities',
     categoryLabel: 'Locker Room & Culture',
     description: 'Where teammates build camaraderie, study film, and uphold the Cavalier Standard.',
-    imageUrl: 'https://images.unsplash.com/photo-1584466977773-e625c37cdd50?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: '/gal_lockers.jpg'
   },
   {
     id: 'gal-9',
-    title: 'On-Campus Student Housing',
+    title: 'On-Campus Student Housing & Campus Life',
     category: 'campus',
     categoryLabel: 'Campus Life & Housing',
     description: 'Dormitory living that fosters independence, study habits, and close-knit team brotherhood.',
-    imageUrl: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: '/rockenhanced.jpeg'
   }
 ];
 
@@ -945,38 +1116,54 @@ export const REMAINING_BALANCE_PLANS = [
   }
 ];
 
-export const BENEDICTINE_VALUES = [
+export const BENEDICTINE_VALUES: BenedictineValue[] = [
   {
     name: 'Integrity',
-    desc: 'We do what is right, even when no one is watching.'
+    desc: 'We do what is right, even when no one is watching.',
+    imageUrl: '/val_intl_1.jpg',
+    badge: 'Character'
   },
   {
     name: 'Discipline',
-    desc: 'Success is earned through consistent preparation, hard work, and daily commitment.'
+    desc: 'Success is earned through consistent preparation, hard work, and daily commitment.',
+    imageUrl: '/val_intl_2.jpg',
+    badge: 'Work Ethic'
   },
   {
     name: 'Accountability',
-    desc: 'We take ownership of our actions, decisions, and personal growth.'
+    desc: 'We take ownership of our actions, decisions, and personal growth.',
+    imageUrl: '/val_intl_3.jpg',
+    badge: 'Leadership'
   },
   {
     name: 'Respect',
-    desc: 'We honor our teammates, coaches, opponents, officials, and the traditions of the game while embracing the Benedictine value of recognizing the dignity of every individual.'
+    desc: 'We honor our teammates, coaches, opponents, officials, and the traditions of the game while embracing the Benedictine value of recognizing the dignity of every individual.',
+    imageUrl: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80',
+    badge: 'Brotherhood'
   },
   {
     name: 'Excellence',
-    desc: 'We pursue our highest potential in athletics, academics, and personal development.'
+    desc: 'We pursue our highest potential in athletics, academics, and personal development.',
+    imageUrl: '/val_excellence.jpg',
+    badge: 'High Standard'
   },
   {
     name: 'Teamwork',
-    desc: 'We believe that collective success is built through trust, communication, and selfless commitment to one another.'
+    desc: 'We believe that collective success is built through trust, communication, and selfless commitment to one another.',
+    imageUrl: '/val_intl_4.jpg',
+    badge: 'Unit'
   },
   {
     name: 'Continuous Improvement',
-    desc: 'Every day is an opportunity to become stronger, smarter, and better than we were yesterday.'
+    desc: 'Every day is an opportunity to become stronger, smarter, and better than we were yesterday.',
+    imageUrl: '/val_improvement.jpg',
+    badge: 'Development'
   },
   {
     name: 'Service',
-    desc: 'Inspired by the Benedictine spirit of hospitality and stewardship, we seek to positively impact our campus, our community, and those around us through servant leadership and meaningful relationships.'
+    desc: 'Inspired by the Benedictine spirit of hospitality and stewardship, we seek to positively impact our campus, our community, and those around us through servant leadership and meaningful relationships.',
+    imageUrl: '/val_service.jpg',
+    badge: 'Stewardship'
   }
 ];
 

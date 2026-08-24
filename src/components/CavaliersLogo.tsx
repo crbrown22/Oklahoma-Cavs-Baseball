@@ -1,5 +1,5 @@
 import React from 'react';
-import okCavsLogo from '../assets/ok_cavs_logo.png';
+import okCavsLogo from '../assets/okcavs.png';
 
 interface LogoProps {
   className?: string;

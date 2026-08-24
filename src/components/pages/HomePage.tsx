@@ -2,6 +2,7 @@ import React from 'react';
 import { PageTab } from '../../types';
 import { PROGRAM_INFO, FACILITIES_DATA, RECRUITING_STEPS, SCHEDULE_DATA, ROSTER_DATA } from '../../data/mockData';
 import { CavaliersLogo } from '../CavaliersLogo';
+import { RecruitingStepsSection } from '../RecruitingStepsSection';
 import { 
   Trophy, 
   MapPin, 
@@ -27,12 +28,14 @@ interface HomePageProps {
   setActiveTab: (tab: PageTab) => void;
   onOpenRecruitModal: () => void;
   onOpenHandbookModal: () => void;
+  onDeadLinkClick?: (sectionName: string) => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
   setActiveTab,
   onOpenRecruitModal,
   onOpenHandbookModal,
+  onDeadLinkClick,
 }) => {
   const upcomingGames = SCHEDULE_DATA.filter((g) => g.status === 'Upcoming').slice(0, 3);
   const featuredPlayers = ROSTER_DATA.slice(0, 4);
@@ -45,7 +48,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-luminosity scale-105 transition-transform duration-1000"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1508344928928-7165b67de128?auto=format&fit=crop&w=2000&q=80')`
+            backgroundImage: `url('/collegiate_baseball_field.jpg')`
           }}
         />
         {/* Deep Athletic Charcoal/Crimson Vignette */}
@@ -169,58 +172,108 @@ export const HomePage: React.FC<HomePageProps> = ({
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Pillar 1 */}
-          <div className="bg-gradient-to-b from-[#141414] to-[#0e0e0e] p-8 rounded-2xl border border-[#262626] hover:border-[#ca8a04]/50 transition duration-300 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 flex items-center justify-center text-[#facc15]">
-              <Flame className="w-6 h-6" />
+          <div className="bg-gradient-to-b from-[#141414] to-[#0e0e0e] rounded-2xl border border-[#262626] hover:border-[#ca8a04]/50 transition duration-300 overflow-hidden shadow-xl flex flex-col justify-between">
+            <div className="relative h-44 w-full bg-black">
+              <img 
+                src="/pillar_baseball.jpg" 
+                alt="Develop the Player" 
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/40 to-transparent" />
+              <div className="absolute top-3 left-3 w-10 h-10 rounded-xl bg-black/80 border border-[#ca8a04]/50 flex items-center justify-center text-[#facc15] shadow-lg backdrop-blur-sm">
+                <Flame className="w-5 h-5" />
+              </div>
             </div>
-            <h3 className="font-athletic text-2xl font-bold text-white uppercase">
-              1. Develop the Player
-            </h3>
-            <p className="text-sm text-zinc-300 leading-relaxed">
-              We don't just train baseball players—we build better athletes. Daily structured strength & conditioning, explosive rotational power, arm-care protocols, hitting labs, and live collegiate bullpens.
-            </p>
-            <ul className="space-y-2 text-xs text-zinc-300 pt-2 border-t border-[#262626]">
-              <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Progressive S&C & Arm-Care</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Pitch Design & Mechanics</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Exit Velocity & Launch Angles</li>
-            </ul>
+            <div className="p-6 sm:p-8 space-y-4 flex-1 flex flex-col justify-between">
+              <div className="space-y-2">
+                <h3 className="font-athletic text-2xl font-bold text-white uppercase">
+                  1. Develop the Player
+                </h3>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  We don't just train baseball players—we build better athletes. Daily structured strength & conditioning, explosive rotational power, arm-care protocols, hitting labs, and live collegiate bullpens.
+                </p>
+              </div>
+              <ul className="space-y-2 text-xs text-zinc-300 pt-3 border-t border-[#262626]">
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Progressive S&C & Arm-Care</li>
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Pitch Design & Mechanics</li>
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Exit Velocity & Launch Angles</li>
+              </ul>
+            </div>
           </div>
 
           {/* Pillar 2 */}
-          <div className="bg-gradient-to-b from-[#141414] to-[#0e0e0e] p-8 rounded-2xl border border-[#262626] hover:border-[#ca8a04]/50 transition duration-300 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 flex items-center justify-center text-[#facc15]">
-              <ShieldCheck className="w-6 h-6" />
+          <div className="bg-gradient-to-b from-[#141414] to-[#0e0e0e] rounded-2xl border border-[#262626] hover:border-[#ca8a04]/50 transition duration-300 overflow-hidden shadow-xl flex flex-col justify-between">
+            <div className="relative h-44 w-full bg-black">
+              <img 
+                src="/pillar_leadership.jpg" 
+                alt="Build the Person" 
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/40 to-transparent" />
+              <div className="absolute top-3 left-3 w-10 h-10 rounded-xl bg-black/80 border border-[#ca8a04]/50 flex items-center justify-center text-[#facc15] shadow-lg backdrop-blur-sm">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
             </div>
-            <h3 className="font-athletic text-2xl font-bold text-white uppercase">
-              2. Build the Person
-            </h3>
-            <p className="text-sm text-zinc-300 leading-relaxed">
-              The Cavalier Standard: Leave the locker room better than you found it. Respect the facility, your teammates, and the opportunity. Fostering collegiate accountability, study habits, and character.
-            </p>
-            <ul className="space-y-2 text-xs text-zinc-300 pt-2 border-t border-[#262626]">
-              <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Campus Living & Independence</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Academic Advising & Study Hall</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Clubhouse Culture & Leadership</li>
-            </ul>
+            <div className="p-6 sm:p-8 space-y-4 flex-1 flex flex-col justify-between">
+              <div className="space-y-2">
+                <h3 className="font-athletic text-2xl font-bold text-white uppercase">
+                  2. Build the Person
+                </h3>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  The Cavalier Standard: Leave the locker room better than you found it. Respect the facility, your teammates, and the opportunity. Fostering collegiate accountability, study habits, and character.
+                </p>
+              </div>
+              <ul className="space-y-2 text-xs text-zinc-300 pt-3 border-t border-[#262626]">
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Campus Living & Independence</li>
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Academic Advising & Study Hall</li>
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Clubhouse Culture & Leadership</li>
+              </ul>
+            </div>
           </div>
 
           {/* Pillar 3 */}
-          <div className="bg-gradient-to-b from-[#141414] to-[#0e0e0e] p-8 rounded-2xl border border-[#262626] hover:border-[#ca8a04]/50 transition duration-300 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 flex items-center justify-center text-[#facc15]">
-              <Target className="w-6 h-6" />
+          <div className="bg-gradient-to-b from-[#141414] to-[#0e0e0e] rounded-2xl border border-[#262626] hover:border-[#ca8a04]/50 transition duration-300 overflow-hidden shadow-xl flex flex-col justify-between">
+            <div className="relative h-44 w-full bg-black">
+              <img 
+                src="/pillar_placement.jpg" 
+                alt="Advance the Future" 
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/40 to-transparent" />
+              <div className="absolute top-3 left-3 w-10 h-10 rounded-xl bg-black/80 border border-[#ca8a04]/50 flex items-center justify-center text-[#facc15] shadow-lg backdrop-blur-sm">
+                <Target className="w-5 h-5" />
+              </div>
             </div>
-            <h3 className="font-athletic text-2xl font-bold text-white uppercase">
-              3. Advance the Future
-            </h3>
-            <p className="text-sm text-zinc-300 leading-relaxed">
-              We are the bridge to your next collegiate roster. We guide you through college identification, coach communication, recruiting video production, campus visits, and eligibility transfer rules.
-            </p>
-            <ul className="space-y-2 text-xs text-zinc-300 pt-2 border-t border-[#262626]">
-              <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Verified Highlight Video Production</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Direct College Coach Networking</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> NCAA, NAIA & NJCAA Placement</li>
-            </ul>
+            <div className="p-6 sm:p-8 space-y-4 flex-1 flex flex-col justify-between">
+              <div className="space-y-2">
+                <h3 className="font-athletic text-2xl font-bold text-white uppercase">
+                  3. Advance the Future
+                </h3>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  We are the bridge to your next collegiate roster. We guide you through college identification, coach communication, recruiting video production, campus visits, and eligibility transfer rules.
+                </p>
+              </div>
+              <ul className="space-y-2 text-xs text-zinc-300 pt-3 border-t border-[#262626]">
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Verified Highlight Video Production</li>
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> Direct College Coach Networking</li>
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" /> NCAA, NAIA & NJCAA Placement</li>
+              </ul>
+            </div>
           </div>
+        </div>
+
+        {/* Link to Full 5 Pillars Curriculum */}
+        <div className="text-center pt-2">
+          <button
+            onClick={() => setActiveTab('about')}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1a1a1a] hover:bg-[#ca8a04] hover:text-black text-[#facc15] font-bold text-xs uppercase tracking-wider border border-[#ca8a04]/40 transition-colors shadow-lg"
+          >
+            <span>Explore The Full 5 Pillars of Cavalier Development</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
       </section>
 
@@ -239,7 +292,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             onClick={() => setActiveTab('about')}
             className="inline-flex items-center gap-2 text-sm font-bold text-[#facc15] hover:text-white transition"
           >
-            View All 6 Facilities & Details <ArrowRight className="w-4 h-4" />
+            View All Facilities & Details <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
@@ -259,6 +312,11 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-[#0a0a0a]/85 border border-[#ca8a04]/40 text-[#facc15] backdrop-blur-md">
                   {facility.subtitle}
                 </span>
+                {facility.badge && (
+                  <span className="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-[#dc2626] text-white shadow-lg border border-red-400/40">
+                    {facility.badge}
+                  </span>
+                )}
               </div>
 
               <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
@@ -351,57 +409,11 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* Featured Prospects Roster Preview */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex items-end justify-between border-b border-[#262626] pb-4">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#facc15]">
-              Class of 2025–2026
-            </span>
-            <h2 className="font-athletic text-3xl sm:text-4xl font-black text-white uppercase">
-              ACTIVE CAVALIERS PROSPECTS
-            </h2>
-          </div>
-          <button
-            onClick={() => setActiveTab('roster')}
-            className="text-xs font-bold text-[#facc15] hover:text-white flex items-center gap-1"
-          >
-            View Full Roster ({ROSTER_DATA.length} Players) →
-          </button>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {featuredPlayers.map((player) => (
-            <div
-              key={player.id}
-              onClick={() => setActiveTab('roster')}
-              className="bg-[#121212] p-5 rounded-2xl border border-[#262626] hover:border-[#ca8a04] transition cursor-pointer space-y-3 group"
-            >
-              <div className="flex items-start justify-between">
-                <span className="w-10 h-10 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/30 flex items-center justify-center font-athletic text-xl font-bold text-[#facc15] group-hover:bg-[#eab308] group-hover:text-zinc-950 transition">
-                  #{player.number}
-                </span>
-                <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-[#1a1a1a] text-zinc-300 border border-[#262626]">
-                  {player.primaryPosition}
-                </span>
-              </div>
 
-              <div>
-                <h4 className="font-athletic text-xl font-bold text-white group-hover:text-[#facc15] transition">
-                  {player.name}
-                </h4>
-                <p className="text-xs text-zinc-400">
-                  {player.highSchool} • {player.hometown}, {player.state}
-                </p>
-              </div>
-
-              <div className="pt-2 border-t border-[#262626] flex items-center justify-between text-[11px]">
-                <span className="text-zinc-400">B/T: {player.bats}/{player.throws}</span>
-                <span className="text-[#facc15] font-semibold">{player.gpa} GPA</span>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* 7-Step Recruiting & Placement System */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <RecruitingStepsSection onOpenRecruitModal={onOpenRecruitModal} />
       </section>
 
       {/* Call To Action Recruitment Banner */}

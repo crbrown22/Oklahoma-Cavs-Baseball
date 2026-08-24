@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { PageTab, FAQItem } from '../../types';
+import { PillarsSection } from '../PillarsSection';
+import { RecruitingStepsSection } from '../RecruitingStepsSection';
 import { 
   PROGRAM_INFO, 
   FACILITIES_DATA, 
@@ -169,91 +171,40 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         </div>
 
         {/* Benedictine Values Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {BENEDICTINE_VALUES.map((val, idx) => (
-            <div key={idx} className="bg-[#0e0e0e] p-5 rounded-2xl border border-[#262626] space-y-2">
-              <span className="font-athletic text-lg font-bold text-[#facc15] uppercase block">
-                {val.name}
-              </span>
-              <p className="text-xs text-zinc-300 leading-relaxed">
-                {val.desc}
-              </p>
+            <div key={idx} className="bg-[#0e0e0e] rounded-2xl border border-[#262626] overflow-hidden group hover:border-[#ca8a04]/50 transition-all duration-300 shadow-xl flex flex-col justify-between">
+              <div className="relative h-36 w-full bg-black overflow-hidden">
+                <img
+                  src={val.imageUrl}
+                  alt={val.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-[#0e0e0e]/40 to-transparent" />
+                <div className="absolute top-3 right-3">
+                  <span className="text-[10px] font-bold uppercase px-2.5 py-1 rounded-full bg-[#1c1917]/90 text-[#facc15] border border-[#ca8a04]/40 shadow">
+                    {val.badge}
+                  </span>
+                </div>
+              </div>
+              <div className="p-5 space-y-2 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="font-athletic text-lg font-bold text-white uppercase text-[#facc15] block group-hover:text-amber-400 transition-colors">
+                    {val.name}
+                  </span>
+                  <p className="text-xs text-zinc-300 leading-relaxed mt-1">
+                    {val.desc}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       {/* The 5 Pillars Development Model */}
-      <section className="space-y-8">
-        <div className="text-center space-y-2">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#facc15]">
-            Comprehensive Student-Athlete Curriculum
-          </span>
-          <h2 className="font-athletic text-3xl sm:text-5xl font-black text-white uppercase">
-            THE 5 PILLARS OF CAVALIER DEVELOPMENT
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1c1c1c] text-[#facc15] flex items-center justify-center font-bold">1</div>
-            <h3 className="font-athletic text-xl font-bold text-white uppercase">Baseball</h3>
-            <ul className="text-xs text-zinc-300 space-y-1">
-              <li>• Pitching</li>
-              <li>• Hitting</li>
-              <li>• Defense</li>
-              <li>• Catching</li>
-              <li>• Baserunning</li>
-              <li>• Mental Performance</li>
-            </ul>
-          </div>
-
-          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1c1c1c] text-[#facc15] flex items-center justify-center font-bold">2</div>
-            <h3 className="font-athletic text-xl font-bold text-white uppercase">Athletic</h3>
-            <ul className="text-xs text-zinc-300 space-y-1">
-              <li>• Strength Training</li>
-              <li>• Speed Development</li>
-              <li>• Mobility</li>
-              <li>• Recovery</li>
-              <li>• Nutrition</li>
-            </ul>
-          </div>
-
-          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1c1c1c] text-[#facc15] flex items-center justify-center font-bold">3</div>
-            <h3 className="font-athletic text-xl font-bold text-white uppercase">Academic</h3>
-            <ul className="text-xs text-zinc-300 space-y-1">
-              <li>• Study Hall</li>
-              <li>• Time Management</li>
-              <li>• College Readiness</li>
-              <li>• Transfer Assistance</li>
-            </ul>
-          </div>
-
-          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1c1c1c] text-[#facc15] flex items-center justify-center font-bold">4</div>
-            <h3 className="font-athletic text-xl font-bold text-white uppercase">Leadership</h3>
-            <ul className="text-xs text-zinc-300 space-y-1">
-              <li>• Accountability</li>
-              <li>• Communication</li>
-              <li>• Professionalism</li>
-              <li>• Teamwork</li>
-            </ul>
-          </div>
-
-          <div className="bg-[#121212] p-6 rounded-2xl border border-[#262626] space-y-3 sm:col-span-2 lg:col-span-1">
-            <div className="w-10 h-10 rounded-xl bg-[#1c1c1c] text-[#facc15] flex items-center justify-center font-bold">5</div>
-            <h3 className="font-athletic text-xl font-bold text-white uppercase">Placement</h3>
-            <ul className="text-xs text-zinc-300 space-y-1">
-              <li>• Recruiting Strategy</li>
-              <li>• Highlight Videos</li>
-              <li>• Coach Networking</li>
-              <li>• Scholarship Guidance</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <PillarsSection onOpenRecruiting={onOpenRecruitModal} />
 
       {/* A Day in the Life & Typical Weekday Schedule */}
       <section className="bg-[#121212] p-8 sm:p-12 rounded-3xl border border-[#262626] space-y-8 shadow-2xl">
@@ -318,16 +269,28 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
       {/* KROME Sports Performance Partnership */}
       <section className="bg-gradient-to-r from-[#171717] via-[#141414] to-[#0c0c0c] p-8 sm:p-12 rounded-3xl border border-[#ca8a04]/40 space-y-8 shadow-2xl">
-        <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1c1917] border border-[#ca8a04]/40 text-xs font-bold uppercase tracking-widest text-[#facc15]">
-            <Flame className="w-3.5 h-3.5" /> Elite Strength & Performance
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto">
+          {/* Logo Showcase Card */}
+          <div className="flex-shrink-0 bg-white rounded-2xl p-4 sm:p-6 shadow-xl border border-zinc-200/80 max-w-[280px] sm:max-w-[320px] w-full flex items-center justify-center">
+            <img
+              src="/krome_logo.jpg"
+              alt="KROME Sports Performance (KSP) Official Logo"
+              className="w-full h-auto object-contain max-h-36 rounded-lg"
+              loading="lazy"
+            />
           </div>
-          <h2 className="font-athletic text-3xl sm:text-5xl font-black text-white uppercase">
-            KROME SPORTS PERFORMANCE PARTNERSHIP
-          </h2>
-          <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-            The Oklahoma Cavaliers train with <strong>KROME Sports Performance (KSP)</strong>, who has coached thousands of athletes from youth to professional ranks, including helping the <strong>2025-2026 Seminole State Trojans Baseball to an NJCAA World Series appearance</strong> this spring.
-          </p>
+
+          <div className="space-y-4 text-center md:text-left flex-1">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1c1917] border border-[#ca8a04]/40 text-xs font-bold uppercase tracking-widest text-[#facc15]">
+              <Flame className="w-3.5 h-3.5" /> Elite Strength & Performance Partner
+            </div>
+            <h2 className="font-athletic text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight">
+              KROME SPORTS PERFORMANCE PARTNERSHIP
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+              The Oklahoma Cavaliers train with <strong>KROME Sports Performance (KSP)</strong>, who has coached thousands of athletes from youth to professional ranks, including helping the <strong>2025-2026 Seminole State Trojans Baseball to an NJCAA World Series appearance</strong> this spring.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
@@ -393,6 +356,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent lg:hidden" />
+            {currentFacility.badge && (
+              <span className="absolute top-4 left-4 px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider bg-[#dc2626] text-white shadow-xl border border-red-400/40">
+                {currentFacility.badge}
+              </span>
+            )}
           </div>
 
           <div className="lg:col-span-6 p-8 sm:p-10 flex flex-col justify-between space-y-6">
@@ -436,66 +404,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       </section>
 
       {/* College Placement & 7-Step Recruiting Process */}
-      <section className="space-y-10">
-        <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#facc15]">
-            Your Next School Is The Goal
-          </span>
-          <h2 className="font-athletic text-3xl sm:text-5xl font-black text-white uppercase">
-            THE 7-STEP RECRUITING & PLACEMENT SYSTEM
-          </h2>
-          <p className="text-zinc-300 text-xs sm:text-sm">
-            The Cavaliers are not designed to be the final destination of a player's baseball career. We are the bridge to your next collegiate opportunity.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {RECRUITING_STEPS.map((step) => (
-            <div
-              key={step.step}
-              className="bg-[#121212] p-6 rounded-2xl border border-[#262626] space-y-3 hover:border-[#ca8a04]/50 transition flex flex-col justify-between"
-            >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="w-10 h-10 rounded-xl bg-[#1a1a1a] border border-[#ca8a04]/40 flex items-center justify-center font-athletic text-xl font-black text-[#facc15]">
-                    0{step.step}
-                  </span>
-                  <span className="text-[11px] font-bold text-[#eab308] uppercase tracking-wider">
-                    Step {step.step}
-                  </span>
-                </div>
-                <h3 className="font-athletic text-2xl font-bold text-white uppercase">
-                  {step.title}
-                </h3>
-                <p className="text-xs text-zinc-300 leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            </div>
-          ))}
-
-          {/* Callout Card */}
-          <div className="bg-gradient-to-br from-[#7f1d1d] to-[#121212] p-6 rounded-2xl border border-[#ca8a04]/50 flex flex-col justify-between space-y-4">
-            <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#facc15]">
-                Transfer & Compliance Support
-              </span>
-              <h3 className="font-athletic text-2xl font-bold text-white uppercase">
-                ACADEMIC & ELIGIBILITY GUIDANCE
-              </h3>
-              <p className="text-xs text-zinc-200 leading-relaxed">
-                We assist with NCAA, NAIA, and NJCAA transfer rules, organizing verified player stats, transcript reviews, and communicating with collegiate admissions.
-              </p>
-            </div>
-            <button
-              onClick={onOpenRecruitModal}
-              className="w-full py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-zinc-950 bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] hover:from-[#fef08a] hover:to-[#eab308] border border-amber-300/40 transition"
-            >
-              Start Placement Profile
-            </button>
-          </div>
-        </div>
-      </section>
+      <RecruitingStepsSection onOpenRecruitModal={onOpenRecruitModal} />
 
       {/* Program Investment & Complete Payment Options */}
       <section className="bg-[#121212] p-8 sm:p-12 rounded-3xl border border-[#262626] space-y-10 shadow-2xl">

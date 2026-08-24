@@ -48,6 +48,8 @@ export interface Facility {
   highlights: string[];
   imageUrl: string;
   iconName: string;
+  isComingSoon?: boolean;
+  badge?: string;
 }
 
 export interface GameSchedule {
@@ -80,6 +82,39 @@ export interface GalleryPhoto {
   categoryLabel: string;
   description: string;
   imageUrl: string;
+}
+
+export interface BenedictineValue {
+  name: string;
+  desc: string;
+  imageUrl: string;
+  badge: string;
+}
+
+export interface DevelopmentPillar {
+  id: string;
+  number: string;
+  title: string;
+  shortTitle: string;
+  tagline: string;
+  description: string;
+  focusAreas: string[];
+  imageUrl: string;
+  badge: string;
+  accentColor: string;
+  iconName: string;
+}
+
+export interface RecruitingStep {
+  step: string;
+  phase: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  deliverables: string[];
+  iconName: string;
+  cavaliersAdvantage: string;
+  timeframe: string;
 }
 
 export interface RecruitmentFormData {

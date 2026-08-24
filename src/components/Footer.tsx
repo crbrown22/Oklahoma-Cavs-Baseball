@@ -8,12 +8,14 @@ interface FooterProps {
   setActiveTab: (tab: PageTab) => void;
   onOpenRecruitModal: () => void;
   onOpenHandbookModal: () => void;
+  onDeadLinkClick: (sectionName: string) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   setActiveTab,
   onOpenRecruitModal,
   onOpenHandbookModal,
+  onDeadLinkClick,
 }) => {
   const handleNav = (tab: PageTab) => {
     setActiveTab(tab);
@@ -74,26 +76,29 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => handleNav('roster')}
-                  className="flex items-center gap-2 hover:text-[#facc15] transition text-zinc-300 hover:translate-x-0.5 duration-150"
+                  onClick={() => onDeadLinkClick('Roster')}
+                  className="flex items-center gap-2 text-zinc-400 opacity-60 hover:text-amber-300 transition cursor-not-allowed text-left"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#eab308]" /> Active Player Roster
+                  <ChevronRight className="w-3.5 h-3.5 text-zinc-500" /> Active Player Roster
+                  <span className="text-[9px] uppercase font-bold px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Updating</span>
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNav('coaches')}
-                  className="flex items-center gap-2 hover:text-[#facc15] transition text-zinc-300 hover:translate-x-0.5 duration-150"
+                  onClick={() => onDeadLinkClick('Coaching Staff')}
+                  className="flex items-center gap-2 text-zinc-400 opacity-60 hover:text-amber-300 transition cursor-not-allowed text-left"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#eab308]" /> Coaching Staff & Operations
+                  <ChevronRight className="w-3.5 h-3.5 text-zinc-500" /> Coaching Staff & Operations
+                  <span className="text-[9px] uppercase font-bold px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Updating</span>
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNav('schedule')}
-                  className="flex items-center gap-2 hover:text-[#facc15] transition text-zinc-300 hover:translate-x-0.5 duration-150"
+                  onClick={() => onDeadLinkClick('Game Schedule')}
+                  className="flex items-center gap-2 text-zinc-400 opacity-60 hover:text-amber-300 transition cursor-not-allowed text-left"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#eab308]" /> 2025-2026 Game Schedule
+                  <ChevronRight className="w-3.5 h-3.5 text-zinc-500" /> 2025-2026 Game Schedule
+                  <span className="text-[9px] uppercase font-bold px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Updating</span>
                 </button>
               </li>
               <li>

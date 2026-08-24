@@ -2,12 +2,15 @@
 
 @layer base {
   :root {
-    --bg-main: #0a0a0a;
-    --bg-card: #121212;
-    --bg-card-hover: #181818;
-    --bg-surface: #151515;
-    --border-subtle: #242424;
-    --border-strong: #333333;
+    --bg-main: #050916;
+    --bg-card: rgba(13, 20, 36, 0.8);
+    --bg-card-hover: rgba(20, 30, 54, 0.9);
+    --bg-surface: rgba(15, 22, 40, 0.85);
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(234, 179, 8, 0.25);
+    --cavs-midnight: #0a1430;
+    --cavs-midnight-dark: #040816;
+    --cavs-scarlet: #881337;
     --cavs-crimson: #991b1b;
     --cavs-crimson-bright: #dc2626;
     --cavs-gold: #eab308;
@@ -16,7 +19,15 @@
   }
 
   body {
-    background-color: #0a0a0a;
+    background-color: #040712;
+    background-image: 
+      radial-gradient(circle at 10% 8%, rgba(136, 19, 55, 0.38) 0%, transparent 42%),
+      radial-gradient(circle at 90% 18%, rgba(10, 26, 60, 0.95) 0%, transparent 48%),
+      radial-gradient(circle at 50% 50%, rgba(202, 138, 4, 0.15) 0%, transparent 52%),
+      radial-gradient(circle at 85% 82%, rgba(153, 27, 27, 0.32) 0%, transparent 45%),
+      radial-gradient(circle at 15% 78%, rgba(12, 30, 70, 0.8) 0%, transparent 50%),
+      linear-gradient(135deg, #050a18 0%, #1a060d 36%, #0d0416 68%, #060f26 100%);
+    background-attachment: fixed;
     color: #f4f4f5;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
@@ -38,11 +49,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #050916;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #1e293b;
   border-radius: 4px;
 }
 

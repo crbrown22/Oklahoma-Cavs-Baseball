@@ -16,7 +16,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ setActiveTab, onOpenRe
   const categories = [
     { id: 'All', label: 'All Photos' },
     { id: 'facilities', label: 'Facilities' },
-    { id: 'training', label: 'Training & Cages' },
+    { id: 'training', label: 'Training & Development' },
     { id: 'games', label: 'Gameday Action' },
     { id: 'campus', label: 'Campus & Dorms' },
   ];

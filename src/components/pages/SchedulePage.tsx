@@ -65,6 +65,37 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({ setActiveTab, onOpen
         </p>
       </div>
 
+      {/* Oklahoma Cavaliers Game Day & Doubleheader Spotlight Banner */}
+      <div className="relative rounded-3xl overflow-hidden border border-amber-500/30 bg-gradient-to-r from-[#121212] via-[#1a1a1a] to-[#121212] shadow-2xl">
+        <div className="absolute inset-0 opacity-25 mix-blend-luminosity pointer-events-none">
+          <img src="/ok_cavs_gameday.jpg" alt="Oklahoma Cavaliers Gameday" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"></div>
+        <div className="relative z-10 p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-3 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[10px] font-black uppercase tracking-widest">
+              <Shield className="w-3.5 h-3.5" /> Gameday Competition & Doubleheaders
+            </div>
+            <h2 className="font-athletic text-2xl sm:text-4xl font-black text-white uppercase tracking-wide">
+              BATTLE-TESTED COLLEGIATE COMPETITION
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+              Every doubleheader (7/7 innings) and single game is approached with professional preparation, scouting reports, and direct recruiting exposure in front of college scouts.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+            <div className="px-5 py-3 rounded-2xl bg-[#141414]/90 border border-amber-500/30 text-center">
+              <span className="block font-athletic text-2xl font-black text-[#facc15]">30–40</span>
+              <span className="text-[10px] uppercase font-bold text-zinc-400">Spring Games</span>
+            </div>
+            <div className="px-5 py-3 rounded-2xl bg-[#141414]/90 border border-amber-500/30 text-center">
+              <span className="block font-athletic text-2xl font-black text-[#facc15]">7 / 7</span>
+              <span className="text-[10px] uppercase font-bold text-zinc-400">Doubleheaders</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Season Switcher & Filter Controls */}
       <div className="space-y-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
