@@ -1137,7 +1137,7 @@ export const BENEDICTINE_VALUES: BenedictineValue[] = [
   {
     name: 'Respect',
     desc: 'We honor our teammates, coaches, opponents, officials, and the traditions of the game while embracing the Benedictine value of recognizing the dignity of every individual.',
-    imageUrl: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/player_on_field.jpg',
     badge: 'Brotherhood'
   },
   {
